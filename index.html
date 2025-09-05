@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UpdaterRD</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css">
+
+    <link rel="stylesheet" href="css/settings.css">
+</head>
+
+<body>
+    <div id="container">
+        <div class="wrapper">
+            <div id="settings">
+                <div class="title"><h1>UpdaterRD</h1></div>
+
+                
+                <form>
+
+                    <div class="tabs">
+                        <button class="active" id="tab-twitch">
+                            <img src="images/logo-twitch.svg" alt=""> 
+                        </button>
+                        <button id="tab-youtube">
+                            <img src="images/logo-youtube.svg" alt=""> 
+                        </button>
+                        <button id="tab-kick">
+                            <img src="images/logo-kick.svg" alt=""> 
+                        </button>
+                        <button id="tab-streamerbot">
+                            <img src="images/logo-streamerbot.png" alt=""> 
+                        </button>
+                    </div>
+
+
+
+
+                    <div class="platform" id="streamerbot">
+
+                        <div class="config">
+                            <h2>Streamer.bot</h2>
+
+                            <div id="streamerBotStatus" class="platform-enable">
+                                <small>Awaiting for connection</small>
+                                <label><i class="fa-solid fa-circle"></i></label>
+                            </div>
+                        </div>
+
+                        <div class="setup">
+                            <div class="config rows">
+                                <label>Server</label>
+                                <input type="text" name="streamerBotServerAddress" value="127.0.0.1" class="avoid">
+                            </div>
+                            <div class="config rows">
+                                <label>Port</label>
+                                <input type="text" name="streamerBotServerPort" value="8080" class="avoid">
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+
+                    <div class="platform" id="twitch">
+
+                        <div class="config">
+                            <h2>Twitch</h2>
+                        </div>
+
+                        <div class="setup">
+                            <div class="config rows">
+                                <label>Title</label>
+                                <input type="text" name="twitchStreamTitle" placeholder="Enter a Title">
+                            </div>
+                            <div class="config rows">
+                                <label>Category</label>
+                                <input type="text" name="twitchStreamCategory" placeholder="Enter a Category. e.g. 'Just Chatting'">
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+
+                    <div class="platform" id="youtube">
+
+                        <div class="config">
+                            <h2>YouTube</h2>
+                        </div>
+
+                        <div id="youtubestreams" class="setup">
+                            <div id="youtubestreams-empty" class="config">
+                                <small class="warning">
+                                    <i class="fa-solid fa-warning"></i> You need to start a YouTube stream first for the title to be updated.
+                                </small>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+
+                    <div class="platform" id="kick">
+
+                        <div class="config">
+                            <h2>Kick</h2>
+                        </div>
+
+                        <div class="setup">
+                            <div class="config rows">
+                                <label>Title</label>
+                                <input type="text" name="kickStreamTitle" placeholder="Enter a Title">
+                            </div>
+                            <div class="config rows">
+                                <label>Category</label>
+                                <input type="text" name="kickStreamCategory" placeholder="Enter a Category. e.g. 'Just Chatting'">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="platform">
+                        <button id="streamupdate">Update</button>
+                    </div>
+                    
+
+
+
+
+                </form>
+
+
+            </div>
+
+        </div>
+        
+
+                
+
+    
+        
+        <footer>
+            <p>Made with ❤️ by <strong>VortisRD</strong></p>
+            <p>
+                <a target="_blank" href="https://twitch.com/vortisrd"><i class="fa-brands fa-twitch"></i></a>
+                <a target="_blank" href="https://youtube.com/@vortisrd"><i class="fa-brands fa-youtube"></i></a>
+                <a target="_blank" href="https://tiktok.com/@vortisrd"><i class="fa-brands fa-tiktok"></i></a>
+                <a target="_blank" href="https://kick.com/vortisrd">
+                    <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 800 800">
+                        <polygon class="st0" points="336 111 336 239 401 239 401 175 465 175 465 111 657 111 657 303 593 303 593 367 529 367 529 432 593 432 593 496 657 496 657 689 465 689 465 624 401 624 401 560 336 560 336 689 143 689 143 111 336 111"/>
+                    </svg>
+                </a>
+                <a target="_blank" href="https://x.com/vortisrd"><i class="fa-brands fa-x-twitter"></i></a>
+                <a target="_blank" href="https://github.com/vortisrd"><i class="fa-brands fa-github"></i></a>
+            </p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/simple-notify@1.0.4/dist/simple-notify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.6/dist/purify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@streamerbot/client@1.12.1/dist/streamerbot-client.min.js"></script>
+    <script src="js/settings.js"></script>
+</body>
+</html>

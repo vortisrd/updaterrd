@@ -1,0 +1,317 @@
+/* Basic reset and styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Full-page container styling */
+html {
+    width: 100vw;
+    scroll-behavior: smooth;
+    overflow-wrap: break-word;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-color: #555 #1e1e1e;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    background-color: #121212;
+    
+    overflow-x: hidden;
+}
+
+a { color: #DBB048; }
+
+hr {
+    border: 1px solid #222;
+    margin: 20px 0;
+}
+
+#container {
+    width: 100vw;
+}
+
+#container .wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    overflow-x: hidden;
+    width: 100vw;
+    /*height: 100vh;*/
+}
+
+#settings {
+    /*min-width: 360px;
+    max-width: 640px;*/
+    width: 360px;
+    color: #FFF;
+}
+
+#settings form {
+    display: block;
+    padding: 20px 0 0 0;
+}
+
+#settings .title {
+    text-align: center;
+    margin: 20px 0 0 0;
+}
+
+#settings .title h1 {
+    background-image: url('../images/logo-updaterrd.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    text-indent: -9999px;
+    width: 330px;
+    height: 78px;
+    display: inline-block;
+}
+
+#settings .platform {
+    background: #191919;
+    padding: 20px;
+    border-radius: 10px;
+    outline: 1px solid rgba(255,255,255,0.05);
+    outline-offset: -1px;
+    margin-bottom: 20px;
+}
+
+#settings .platform[id] {
+    display: none;
+}
+
+#settings .platform.active {
+    display: block;
+}
+
+#settings .platform h2 {
+    display: inline-flex;
+    gap: 10px;
+    font-size: 20px;
+}
+
+#settings .platform h2 img {
+    height: 36px;
+}
+
+#settings .config {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+#settings .config.rows {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+#settings .config label {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+#settings .config.rows input {
+    width: 100%;
+}
+
+#settings .config strong {
+    font-weight: 900;
+}
+
+#settings .config small {
+    color: #717171;
+}
+
+#settings .switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 27px;
+    text-align: center;
+}
+
+#settings .switch input[type=checkbox] {
+    opacity: 1;
+    width: 0;
+    height: 0;
+}
+
+#settings .config input[type=text],
+#settings .config input[type=number],
+#settings .config textarea {
+    font-family: "Inter", sans-serif;
+    border: none;
+    background:#222;
+    color: #FFF;
+    padding: 10px 15px;
+    border-radius: 10px;
+    outline: none;
+}
+
+#settings .switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #CCC;
+    transition: .4s;
+    border-radius: 30px;
+}
+
+#settings .switch .slider:before {
+    position: absolute;
+    content: "";
+    height: 1.3em;
+    width: 1.2em;
+    border-radius: 16px;
+    left: 5px;
+    top: 3px;
+    bottom: 0;
+    background-color: white;
+    transition: .4s;
+}
+
+#settings .switch input[type=checkbox]:checked + .slider:before {
+    transform: translateX(1.4em);
+}
+
+#settings .switch input[type=checkbox]:checked + .slider {
+    background-color: #DBB048;
+}
+
+
+#settings small.warning {
+    display: inline-block;
+    padding: 10px 20px 10px 10px;
+    background-color: #232323;
+    color: #FFF;
+    border-radius: 10px;
+    line-height: 150%;
+}
+
+#settings small.warning i {
+    color: #ffcc00;
+}
+
+
+#speakerbot .switch input[type=checkbox]:checked + .slider { background-color: #00dbff; }
+#twitch .switch input[type=checkbox]:checked + .slider { background-color: #a970ff; }
+#youtube .switch input[type=checkbox]:checked + .slider { background-color: #FF0000; }
+#kick .switch input[type=checkbox]:checked + .slider { background-color: #48d415; }
+
+.switch input[type=checkbox]:disabled + .slider { background-color: #111 !important; }
+
+
+
+.tabs {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: -1px;
+}
+
+.tabs button {
+    display: inline-flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    color: #FFF;
+
+    background: #191919;
+    border: 1px solid transparent;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding: 5px 10px;
+
+    border-radius: 10px 10px 0 0;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.tabs button.active {
+    background: #191919;
+    border: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid #191919;
+}
+
+.tabs button img {
+    width: 24px;
+    filter: saturate(0);
+}
+
+.tabs button.active img {
+    filter: saturate(1);
+}
+
+button#streamupdate {
+    font-family: "DM Sans", sans-serif;
+    font-weight: bold;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #252525;
+    color: #FFF;
+    transition: .4s;
+    width: 100%;
+    font-size: 14px;
+}
+
+footer {
+    margin: 0 auto;
+    max-width: 640px;
+    padding: 20px;
+    background: rgba(18,18,18,0.5);
+    backdrop-filter: blur(10px);
+    font-size: 14px;
+    text-align: center;
+    color: #FFF;
+}
+
+footer a {
+    display: inline-block;
+    margin: 10px 5px;
+    font-size: 20px;
+    color: #DBB048;
+}
+
+footer a img {
+    height: 22px;
+    vertical-align: bottom;
+}
+
+
+
+footer a[href="https://kick.com/vortisrd"] svg {
+    height: 26px;
+    vertical-align: bottom;
+    fill: #DBB048;
+}
+
+
+#settings .config #streamerBotStatus label i {
+    color: #ce2c2c;
+    text-shadow: 0 0 5px #ce2c2c;
+}
+
+#settings .config #streamerBotStatus.connected label i {
+    color: #14c22b;
+    text-shadow: 0 0 5px #14c22b;
+}
