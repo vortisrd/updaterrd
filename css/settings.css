@@ -253,11 +253,6 @@ hr {
 
 .tabs button img {
     width: 24px;
-    filter: saturate(0);
-}
-
-.tabs button.active img {
-    filter: saturate(1);
 }
 
 button#streamupdate {
