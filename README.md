@@ -8,7 +8,7 @@ UpdaterRD is a tool used to update the Title and the Category of your streams. W
 
 Make sure your **Twitch**, **YouTube** and **Kick** accounts are connected on **Streamer.bot**:
 
-1. On **Streamer.bot**, import the file [updaterrd.sb](https://github.com/vortisrd/chatrd/blob/main/updaterrd.sb) to your **Streamer.bot**.
+1. On **Streamer.bot**, import the file [updaterrd.sb](https://github.com/vortisrd/updaterrd/blob/main/updaterrd.sb) to your **Streamer.bot**.
 2. Go to **Server/Clients → WebSocket Server** and make sure it is running.
 5. Open the [Settings Page](https://vortisrd.github.io/updaterrd) in your browser.
 6. Input your desired titles and games on each tab.
