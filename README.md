@@ -15,6 +15,7 @@ Make sure your **Twitch**, **YouTube** and **Kick** accounts are connected on **
 7. Click **"Update"**.
 
 **⚠️ It could take a while for the titles and the categories to be updated, so be patient! ⚠️**
+**⚠️ As of now, Streamer.bot doesn't have a function do update the Stream Category for YouTube. I don't know if the API has an option for it, but whatever the case, that's why there's no option for it. Thank you for your understanding. ⚠️**
 
 ---
 
